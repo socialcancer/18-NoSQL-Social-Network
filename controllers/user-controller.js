@@ -33,8 +33,8 @@ const userController = {
         params
     }, res) {
         User.findOne({
-                _id: params.id
-            })
+            _id: params.id
+        })
             .populate({
                 path: 'thoughts',
                 select: '-__v'
@@ -62,11 +62,11 @@ const userController = {
         body
     }, res) {
         User.findOneAndUpdate({
-                _id: params.id
-            }, body, {
-                new: true,
-                runValidators: true
-            })
+            _id: params.id
+        }, body, {
+            new: true,
+            runValidators: true
+        })
             .then(dbUserData => {
                 if (!dbUserData) {
                     res.status(404).json({
@@ -84,8 +84,8 @@ const userController = {
         params
     }, res) {
         User.findOneAndDelete({
-                _id: params.id
-            })
+            _id: params.id
+        })
             .then(dbUserData => {
                 if (!dbUserData) {
                     res.status(404).json({
@@ -97,19 +97,19 @@ const userController = {
             })
             .then(dbUserData => {
                 User.updateMany({
-                        _id: {
-                            $in: dbUserData.friends
-                        }
-                    }, {
-                        $pull: {
-                            friends: params.userId
-                        }
-                    })
+                    _id: {
+                        $in: dbUserData.friends
+                    }
+                }, {
+                    $pull: {
+                        friends: params.userId
+                    }
+                })
                     .then(() => {
                         //deletes user's thought associated with id
                         Thought.deleteMany({
-                                username: dbUserData.username
-                            })
+                            username: dbUserData.username
+                        })
                             .then(() => {
                                 res.json({
                                     message: 'User deleted successfully'
@@ -136,14 +136,14 @@ const userController = {
         params
     }, res) {
         User.findOneAndUpdate({
-                _id: params.userId
-            }, {
-                $push: {
-                    friends: params.friendId
-                }
-            }, {
-                new: true
-            })
+            _id: params.userId
+        }, {
+            $push: {
+                friends: params.friendId
+            }
+        }, {
+            new: true
+        })
             .then(dbUserData => {
                 if (!dbUserData) {
                     res.status(404).json({
@@ -160,12 +160,12 @@ const userController = {
     },
 
     //delete friend
-    removefromFriendList({
+    removeFromFriendList({
         params
     }, res) {
         User.findOneAndDelete({
-                _id: params.thoghtId
-            })
+            _id: params.thoghtId
+        })
             .then(deletedFriend => {
                 if (!deletedFriend) {
                     return res.status(404).json({

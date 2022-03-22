@@ -1,6 +1,6 @@
 # NoSQL Social Network
 
-![Employee Tracker](/assets/main.gif)
+![NoSQL - Social Network](/assets/img/no-SQL-GETAll.gif)
 
 ## Description
 
@@ -8,10 +8,11 @@ Your challenge is to build an API for a social network web application where use
 
 ## Acceptance Criteria
 
-- Use the **inquirer package**
-- Use the **mySQL2 package**
-- Use the **console.table.package**
-- Follows the table schema outlined in the homework instructions
+- Enter a command to invoke the **application**
+- Server is started and **Mongoose** models are synced
+- Can view API GET routes in **Insomnia** for **USERS** and **THOUGHTS**
+- Can test API **POST**, **PUT**, and **DELETE** routes in **Insomnia**
+- Can successfully **CREATE** and **DELETE** reactions to thoughts and **ADD** and **REMOVE** friends
 
 ## Installation
 
@@ -27,12 +28,12 @@ This project has no license
 ## Usage
 
 ```
-Start the application use node server.js
+npm run start
 ```
 
 ## Submission
 
-[View the app](https://drive.google.com/file/d/19lu_yEvQxo-th3ILA5MIkFB443CjFZ7j/view?usp=sharing)
+[View the app]
 
 ## Questions
 
