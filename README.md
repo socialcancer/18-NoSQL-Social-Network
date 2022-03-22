@@ -1,6 +1,6 @@
 # NoSQL Social Network
 
-![Employee Tracker](/assets/main.gif)
+![NoSQL - Social Network](/assets/img/no-SQL-GETAll.gif)
 
 ## Description
 
@@ -33,7 +33,7 @@ npm run start
 
 ## Submission
 
-[View the app](https://drive.google.com/file/d/19lu_yEvQxo-th3ILA5MIkFB443CjFZ7j/view?usp=sharing)
+[View the app]
 
 ## Questions
 
