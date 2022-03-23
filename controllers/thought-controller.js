@@ -19,8 +19,8 @@ const thoughtController = {
         params
     }, res) {
         Thought.findOne({
-                _id: params.id
-            })
+            _id: params.id
+        })
             .select('-__v')
             .sort({
                 _id: -1
@@ -51,12 +51,12 @@ const thoughtController = {
                     {
                         _id: body.userId
                     }, {
-                        $addToSet: {
-                            thoughts: ThoughtData._id
-                        }
-                    }, {
-                        new: true
+                    $addToSet: {
+                        thoughts: ThoughtData._id
                     }
+                }, {
+                    new: true
+                }
                 );
             })
             .then(dbUsersData => {
@@ -80,13 +80,13 @@ const thoughtController = {
         body
     }, res) {
         Thought.findOneAndUpdate({
-                _id: params.thoughtId
-            }, {
-                $set: body
-            }, {
-                runValidators: true,
-                new: true
-            })
+            _id: params.thoughtId
+        }, {
+            $set: body
+        }, {
+            runValidators: true,
+            new: true
+        })
             .then(updateThought => {
                 if (!updateThought) {
                     return res.status(404).json({
@@ -105,8 +105,8 @@ const thoughtController = {
         params
     }, res) {
         Thought.findOneAndDelete({
-                _id: params.thoughtId
-            })
+            _id: params.thoughtId
+        })
             .then(deletedThought => {
                 if (!deletedThought) {
                     return res.status(404).json({
@@ -141,15 +141,15 @@ const thoughtController = {
         body
     }, res) {
         Thought.findOneAndUpdate({
-                _id: params.thoughtId
-            }, {
-                $push: {
-                    reactions: body
-                }
-            }, {
-                new: true,
-                runValidators: true
-            })
+            _id: params.thoughtId
+        }, {
+            $push: {
+                reactions: body
+            }
+        }, {
+            new: true,
+            runValidators: true
+        })
             .then(updatedThought => {
                 if (!updatedThought) {
                     res.status(404).json({
@@ -166,19 +166,19 @@ const thoughtController = {
         params
     }, res) {
         Thought.findOneAndUpdate({
-                    _id: params.thoughtId
-                },
-                //allows to remove the reaction by id
-                {
-                    $pull: {
-                        reactions: {
-                            reactionId: params.reactionId
-                        }
+            _id: params.thoughtId
+        },
+            //allows to remove the reaction by id
+            {
+                $pull: {
+                    reactions: {
+                        reactionId: params.reactionId
                     }
-                }, {
-                    new: true
                 }
-            )
+            }, {
+            new: true
+        }
+        )
             .then((thought) => {
                 if (!thought) {
                     res.status(404).json({

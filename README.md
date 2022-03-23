@@ -10,9 +10,9 @@ Your challenge is to build an API for a social network web application where use
 
 - Enter a command to invoke the **application**
 - Server is started and **Mongoose** models are synced
-- Can view API GET routes in **Insomnia** for **USERS** and **THOUGHTS**
-- Can test API **POST**, **PUT**, and **DELETE** routes in **Insomnia**
-- Can successfully **CREATE** and **DELETE** reactions to thoughts and **ADD** and **REMOVE** friends
+- View API GET routes in **Insomnia** for **USERS** and **THOUGHTS**
+- Test API **POST**, **PUT**, and **DELETE** routes in **Insomnia**
+- Successfully **CREATE** and **DELETE** reactions to thoughts and **ADD** and **REMOVE** friends
 
 ## Installation
 
@@ -28,12 +28,13 @@ This project has no license
 ## Usage
 
 ```
-npm run start
+Use Insomnia to view routes
+Use the terminal to start and stop Node.js and MongoDB
 ```
 
 ## Submission
 
-[View the app]
+[View the app](https://drive.google.com/drive/folders/13cnZR41KTPgyL-P_J2OvzbxuSJMnofjW?usp=sharing)
 
 ## Questions
 
